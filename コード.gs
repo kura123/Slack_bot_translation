@@ -1,5 +1,5 @@
 function postSlack(text){
-  var url = "";
+  var url = "URL";
   var options = {
     "method" : "POST",
     "headers": {"Content-type": "application/json"},
@@ -12,3 +12,7 @@ function test(){
   postSlack("これはテストです");
 }
 
+function doPost(e) {
+  var message = "こんにちは " + e.parameter.user_name + "さん";
+  postSlack(message)
+}
